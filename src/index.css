@@ -8,25 +8,25 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Industrial Red & Black Theme */
-    --background: 0 0% 8%;
+    /* Industrial Red & Black Theme - Lighter */
+    --background: 0 0% 14%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 0 0% 18%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 10%;
+    --popover: 0 0% 16%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 85% 45%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 0 90% 55%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 0 0% 22%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 26%;
+    --muted-foreground: 0 0% 70%;
 
     --accent: 0 75% 35%;
     --accent-foreground: 0 0% 100%;
@@ -34,17 +34,17 @@ All colors MUST be HSL.
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 25%;
-    --input: 0 0% 20%;
+    --border: 0 0% 30%;
+    --input: 0 0% 24%;
     --ring: 0 85% 45%;
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 85% 25% / 0.9), hsl(0 0% 5% / 0.95));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 85% 25% / 0.9), hsl(0 0% 10% / 0.95));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 18%));
     --gradient-accent: linear-gradient(90deg, hsl(0 85% 45%), hsl(0 75% 55%));
-    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 8% / 0.3), hsl(0 0% 8% / 0.9));
+    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 14% / 0.3), hsl(0 0% 14% / 0.9));
 
     /* Shadows */
     --shadow-glow: 0 0 40px hsl(0 85% 45% / 0.3);

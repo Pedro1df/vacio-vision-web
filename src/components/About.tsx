@@ -1,7 +1,17 @@
 const About = () => {
   return (
-    <section id="nosotros" className="py-24 relative">
-      <div className="container mx-auto px-4">
+    <section id="nosotros" className="py-24 relative overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+      >
+        <source src="https://videos.pexels.com/video-files/6774107/6774107-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/85 to-background/90" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
             Acerca de <span className="text-gradient">Nosotros</span>
