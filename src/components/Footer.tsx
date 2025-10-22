@@ -9,12 +9,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-gradient mb-4">
+            <h3 className="text-2xl font-bold text-white mb-4">
               Vacío y Hermeticidad
             </h3>
             <p className="text-muted-foreground mb-4">
-              35 años de experiencia en tecnología de vacío industrial. 
-              Soluciones profesionales para la industria mexicana.
+              35 años de experiencia en sistemas de alto vacío, bombas industriales y soluciones de hermeticidad para la industria mexicana.
             </p>
             <div className="flex gap-4">
               <a

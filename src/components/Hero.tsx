@@ -13,22 +13,27 @@ const Hero = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="https://videos.pexels.com/video-files/3141207/3141207-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="https://www.pexels.com/es-es/download/video/18557113/" type="video/mp4" />
         </video>
         <div className="video-overlay" />
       </div>
+
 
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            <span className="text-gradient">Tecnología de Vacío</span>
+            <span className="text-gradient">+30 años de experiencia</span>
             <br />
-            <span className="text-foreground">de Clase Mundial</span>
+            <span className="text-foreground">en la tecnologia del vacio en Mexico</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-            35 años de experiencia en sistemas de alto vacío, bombas industriales y soluciones de hermeticidad para la industria mexicana
-          </p>
+         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+          Especialistas en fabricación, mantenimiento y reconstrucción de bombas de vacío | Filtradoras y desgasificadoras | Liofilizadoras | Metalizadoras | Servicios de aplicación de vacío y secado en tanques y transformadores| y más.
+</p>
+<p>
+  Marcas en las que nos especializamos: Busch, Alcatel, Stokes, Kinney, BOC Edwards, Becker, Varian Precision Scientific, Welch y más.
+</p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"

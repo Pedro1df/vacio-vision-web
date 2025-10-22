@@ -71,14 +71,15 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Teléfono</h4>
-                    <p className="text-muted-foreground">+52 (55) 1234-5678</p>
+                    <p className="text-muted-foreground">+52 (55) 57102944</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-muted-foreground">info@vacioyhermeticidad.com</p>
+                    <p className="text-muted-foreground">vacioyhermeticidad@gmail.com</p>
+                     <p className="text-muted-foreground">ventas@vacioyhermeticidad.com</p>
                   </div>
                 </div>
               </div>

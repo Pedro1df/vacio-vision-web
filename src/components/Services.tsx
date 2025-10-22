@@ -8,7 +8,7 @@ const Services = () => {
       icon: Gauge,
       title: "Sistemas de Alto Vacío",
       description: "Diseño, instalación y mantenimiento de sistemas completos de alto vacío para aplicaciones industriales exigentes.",
-      video: "https://videos.pexels.com/video-files/8099178/8099178-uhd_2560_1440_25fps.mp4",
+      video: "https://www.pexels.com/es-es/download/video/4778069/",
       features: [
         "Diseño personalizado según requerimientos",
         "Instalación certificada",
@@ -21,7 +21,7 @@ const Services = () => {
       icon: Fan,
       title: "Bombas de Vacío",
       description: "Amplia gama de bombas de vacío de las mejores marcas internacionales para todo tipo de aplicaciones industriales.",
-      video: "https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4",
+      video: "https://www.pexels.com/es-es/download/video/15499454/",
       features: [
         "Bombas rotativas de paletas",
         "Bombas de anillo líquido",
@@ -34,7 +34,7 @@ const Services = () => {
       icon: Filter,
       title: "Filtradoras y Desgasificadoras",
       description: "Equipos especializados para filtración y desgasificación en procesos industriales críticos.",
-      video: "https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4",
+      video: "https://www.pexels.com/es-es/download/video/10058364/",
       features: [
         "Filtración de aceites y líquidos",
         "Desgasificación de transformadores",
@@ -47,7 +47,7 @@ const Services = () => {
       icon: Package,
       title: "Renta de Equipos de Vacío",
       description: "Servicio de renta flexible de equipos de vacío para proyectos temporales o pruebas de concepto.",
-      video: "https://videos.pexels.com/video-files/6195539/6195539-uhd_2560_1440_25fps.mp4",
+      video: "https://www.pexels.com/es-es/download/video/12891228/",
       features: [
         "Equipos de última generación",
         "Contratos flexibles",
@@ -103,10 +103,10 @@ const Services = () => {
               </div>
               <div className={index % 2 === 0 ? "order-2" : "order-2 lg:order-1"}>
                 <div className="text-center lg:text-left">
-                  <h3 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
+                  <h2 className="text-5xl md:text-6xl font-bold text-gradient mb-6">
                     {service.title.split(" ")[0]}
-                  </h3>
-                  <p className="text-xl text-muted-foreground">
+                  </h2>
+                  <p className="text-xl text-white/80 mb-8">
                     Soluciones profesionales respaldadas por décadas de experiencia y las mejores marcas del mercado.
                   </p>
                 </div>

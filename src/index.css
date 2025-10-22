@@ -2,53 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
     /* Industrial Red & Black Theme - Lighter */
-    --background: 0 0% 14%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 3%; /* Changed to white */
+    --foreground: 0 0% 68%;
 
-    --card: 0 0% 18%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 3%;
 
-    --popover: 0 0% 16%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 1%;
 
-    --primary: 0 85% 45%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 0 90% 55%;
+    --primary: 0 130% 20%; /* Changed to blood red */
+    --primary-foreground: 0 0% 20%;
+    --primary-glow: 0 20% 30%; /* Changed to blood red */
 
-    --secondary: 0 0% 22%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 20%;
 
     --muted: 0 0% 26%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 0 75% 35%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 25% 35%;
+    --accent-foreground: 0 0% 10%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 20% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 30%;
-    --input: 0 0% 24%;
-    --ring: 0 85% 45%;
+    --input: 0 0% 60%;
+    --ring: 0 200% 60%; /* Changed to blood red */
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 85% 25% / 0.9), hsl(0 0% 10% / 0.95));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 14%), hsl(0 0% 18%));
+    --gradient-hero: linear-gradient(135deg, hsla(0, 0%, 8%, 0.9), hsla(0, 14%, 93%, 0.95));
+    --gradient-section: linear-gradient(180deg, hsl(0, 3%, 6%), hsl(0, 25%, 94%));
     --gradient-accent: linear-gradient(90deg, hsl(0 85% 45%), hsl(0 75% 55%));
-    --gradient-overlay: linear-gradient(180deg, hsl(0 0% 14% / 0.3), hsl(0 0% 14% / 0.9));
+    --gradient-overlay: linear-gradient(180deg, hsla(0, 4%, 10%, 0.15), hsla(0, 15%, 85%, 0.685)); /* More fade */
 
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(0 85% 45% / 0.3);
-    --shadow-elegant: 0 20px 60px -15px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(0, 6%, 3%);
+    --shadow-elegant: 0 20px 60px -15px hsla(0, 1%, 13%, 0.923);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,8 +69,32 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+  h1 {
+    @apply font-bold tracking-tight text-black; /* Titles in red */
+  }
+
+  h2 {
+    @apply font-bold tracking-tight text-white; /* Titles in black */
+  }
+
+  h3 {
+    @apply font-bold tracking-tight text-white; /* Titles in black */
+  }
+
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-white; /* Titles in red */
+  }
+}
+
+@layer components {
+  .card-text {
+    color: black; /* Text inside cards in black */
+  }
+
+  .form-container {
+    background-color: white; /* Form background in white */
   }
 }
 
@@ -84,7 +108,7 @@ All colors MUST be HSL.
   }
 
   .video-overlay {
-    @apply absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90;
+    @apply absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/95; /* Darker overlay */
   }
 
   .glow-effect {

@@ -34,9 +34,9 @@ const Stats = () => {
     const stepDuration = duration / steps;
 
     const targets = {
-      years: 35,
-      clients: 500,
-      production: 150,
+      years: 32,
+      clients: 200,
+      production: 300,
     };
 
     let currentStep = 0;
@@ -77,7 +77,7 @@ const Stats = () => {
       value: counts.production,
       suffix: "%",
       label: "Mayor Producción",
-      description: "Incremento promedio con nuestros equipos",
+      description: "Hasta un 300% más eficiente",
     },
   ];
 

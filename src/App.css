@@ -7,7 +7,7 @@
 
 .logo {
   height: 6em;
-  padding: 1.5em;
+  padding: 3em;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -38,5 +38,5 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #bdb9b9;
 }
