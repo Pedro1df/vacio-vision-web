@@ -22,7 +22,7 @@ const Navbar = () => {
     { href: "#filtradoras", label: "Filtradoras y desgasificadoras" },
     { href: "#secado", label: "Secado al vacío" },
     { href: "#detectores", label: "Detectores de fuga y más" },
-    { href: "#blog", label: "Blog" },
+    { href: "vacioblog/index.html", label: "Blog" },
     { href: "#contacto", label: "Contacto" },
   ];
 
@@ -61,16 +61,21 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="px-1 py-2 text-xl font-semibold text-white hover:text-primary hover:bg-white/10 rounded transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isInternal = link.href.startsWith("#");
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  {...(isInternal && {
+                    onClick: (e) => scrollToSection(e, link.href),
+                  })}
+                  className="px-1 py-2 text-xl font-semibold text-white hover:text-primary hover:bg-white/10 rounded transition-colors"
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,16 +96,21 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-2 space-y-1 border-t border-border">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => scrollToSection(e, link.href)}
-                className="block px-4 py-3 text-lg font-semibold text-white hover:text-primary hover:bg-white/10 rounded transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isInternal = link.href.startsWith("#");
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  {...(isInternal && {
+                    onClick: (e) => scrollToSection(e, link.href),
+                  })}
+                  className="block px-4 py-3 text-lg font-semibold text-white hover:text-primary hover:bg-white/10 rounded transition-colors"
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
         )}
       </div>
