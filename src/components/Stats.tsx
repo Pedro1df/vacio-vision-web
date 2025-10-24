@@ -82,23 +82,28 @@ const Stats = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-gradient-to-b from-background to-card">
+    <section ref={sectionRef} className="py-5 bg-black">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-8 rounded-xl bg-card border border-border hover:border-primary transition-all duration-300 hover:shadow-lg hover:glow-effect"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              className={`text-center p-8 rounded-xl bg-white/10 border border-white/20 hover:border-primary transition-all duration-300 hover:shadow-lg hover:glow-effect ${
+                isVisible ? "animate-fade-in" : "opacity-96"
+              }`}
+              style={{
+                animationDelay: `${index * 0.2}s`,
+                animationFillMode: "forwards",
+              }}
             >
               <div className="text-6xl md:text-7xl font-bold text-gradient mb-4">
                 {stat.value}
                 {stat.suffix}
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">
+              <h3 className="text-xl font-bold text-white mb-2">
                 {stat.label}
               </h3>
-              <p className="text-muted-foreground">{stat.description}</p>
+              <p className="text-white/80">{stat.description}</p>
             </div>
           ))}
         </div>

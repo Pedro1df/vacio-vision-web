@@ -8,49 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Industrial Red & Black Theme - Lighter */
-    --background: 0 0% 3%; /* Changed to white */
-    --foreground: 0 0% 68%;
+    /* Industrial Red & Black Theme - Lighter (ajustada para fondo claro) */
+    --background: 5 2% 100%;     /* fondo muy claro */
+    --foreground: 85 0% 220%;     /* texto principal oscuro */
 
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 3%;
+    --card: 1 0% 100%;            /* tarjetas blancas */
+    --card-foreground: 85 95% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 1%;
+    --popover: 0 0% 56%;
+    --popover-foreground:0 0% 58%;
 
-    --primary: 0 130% 20%; /* Changed to blood red */
-    --primary-foreground: 0 0% 20%;
-    --primary-glow: 0 20% 30%; /* Changed to blood red */
+    --primary: 10 80% 35%;         /* rojo primario visible */
+    --primary-foreground: 15 55% 15%;
+    --primary-glow: 0 75% 60%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 20%;
+    --secondary: 8 8% 15%;
+    --secondary-foreground: 25 6% 15%;
 
-    --muted: 0 0% 26%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 0 0% 1%;
+    --muted-foreground: 0 10% 1%;  /*botones*/
 
-    --accent: 0 25% 35%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 15 12% 11%;
+    --accent-foreground: 22 6% 9%;
 
-    --destructive: 0 20% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 85% 20%;
+    --destructive-foreground: 0 0% 20%;
 
-    --border: 0 0% 30%;
-    --input: 0 0% 60%;
-    --ring: 0 200% 60%; /* Changed to blood red */
+    --border: 15 10% 15%;
+    --input: 15 8% 18%;
+    --ring: 0 85% 50%;
 
     --radius: 0.75rem;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsla(0, 0%, 8%, 0.9), hsla(0, 14%, 93%, 0.95));
-    --gradient-section: linear-gradient(180deg, hsl(0, 3%, 6%), hsl(0, 25%, 94%));
-    --gradient-accent: linear-gradient(90deg, hsl(0 85% 45%), hsl(0 75% 55%));
-    --gradient-overlay: linear-gradient(180deg, hsla(0, 4%, 10%, 0.15), hsla(0, 15%, 85%, 0.685)); /* More fade */
+    /* Gradients (más sutiles/translúcidos) */
+    --gradient-hero: linear-gradient(135deg, hsla(0, 2%, 8%, 0.95), hsl(0 78% 31% / 0.95));
+    --gradient-section: linear-gradient(180deg, hsl(0 82% 49% / 0.9), hsl(0 83% 32% / 0.85));
+    --gradient-accent: linear-gradient(90deg, hsl(0 85% 45% / 0.95), hsl(0 76% 21% / 0.9));
+    --gradient-overlay: linear-gradient(180deg, hsl(0 83% 43% / 0.08), hsl(0 79% 30% / 0.12));
 
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(0, 6%, 3%);
-    --shadow-elegant: 0 20px 60px -15px hsla(0, 1%, 13%, 0.923);
+    /* Sombras más suaves para no oscurecer fondo */
+    --shadow-glow: 20 100 120px hsl(0 0% 0% / 0.06);
+    --shadow-elegant: 0 120px 60px -15px hsl(0 0% 0% / 0.06);
 
-    /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
@@ -61,7 +60,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-black;
     font-feature-settings: "kern";
   }
 
@@ -74,27 +73,30 @@ All colors MUST be HSL.
   }
 
   h2 {
-    @apply font-bold tracking-tight text-white; /* Titles in black */
+    @apply font-bold tracking-tight text-black; /* Titles in black */
   }
 
   h3 {
-    @apply font-bold tracking-tight text-white; /* Titles in black */
+    @apply font-bold tracking-tight text-primary; /* Titles in black */
   }
 
-  h4,
+  h4,{
+    @apply font-bold tracking-tight text-primary; /* Titles in black */
+  }
   h5,
   h6 {
-    @apply font-bold tracking-tight text-white; /* Titles in red */
+    @apply font-bold tracking-tight text-black; /* Titles in red */
   }
 }
 
 @layer components {
   .card-text {
-    color: black; /* Text inside cards in black */
+    color: hsl(var(--card-foreground)); /* texto de tarjetas oscuro sobre blanco */
   }
 
   .form-container {
-    background-color: white; /* Form background in white */
+    background-color: hsl(var(--card));
+    color: hsl(var(--background));
   }
 }
 
@@ -108,10 +110,22 @@ All colors MUST be HSL.
   }
 
   .video-overlay {
-    @apply absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/95; /* Darker overlay */
+    @apply absolute inset-0;
+    /* superposición mucho más ligera para que se vea el video de fondo */
+    background: linear-gradient(1deg, hsl(var(--background) / 0.1), hsl(var(--background) / 0.06));
+    pointer-events: none;
   }
 
   .glow-effect {
     box-shadow: var(--shadow-glow);
   }
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

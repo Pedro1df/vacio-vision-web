@@ -5,21 +5,20 @@ import { Button } from "@/components/ui/button";
 const Blog = () => {
   const articles = [
     {
-      title: "Cómo Ayudamos a Aumentar la Producción de una Refinería en un 150%",
-      excerpt: "Caso de éxito: Implementación de un sistema completo de alto vacío en una refinería mexicana, logrando resultados extraordinarios en eficiencia y producción.",
-      date: "15 de Marzo, 2024",
+      title: " Caso de éxito: Reconstrucción de varias desgasificadoras de aceite dielectrico para transformador de CFE ",
+      excerpt: "Conoce el caso de CFE, enterate como nuestros especialistas ayudaron a esta empresa publica a alcanzar un mayor volumen de produccion y reducción de costos en sus procesos, gracias a la reconstruccion de varias desgasificadoras en estado critico.",
       category: "Caso de Éxito",
-      content: "Una importante refinería en el norte del país enfrentaba problemas de eficiencia en sus procesos de destilación al vacío. Después de un análisis exhaustivo, implementamos un sistema integrado de bombas de vacío de alta capacidad junto con un sistema de monitoreo automatizado...",
+      content: "Descubré como la implementación de estos sistemas dió resultados en producción, como si fueran practicamente equipos nuevos.",
     },
     {
-      title: "Guía Completa: Mantenimiento Preventivo de Bombas de Vacío",
+      title: "Guía Completa: Detección y Solución de Fugas en Sistemas de Vacío Industriales",
       excerpt: "Todo lo que necesitas saber sobre el mantenimiento de tus equipos de vacío para garantizar máxima eficiencia y vida útil prolongada.",
       date: "8 de Marzo, 2024",
       category: "Mantenimiento",
       content: "El mantenimiento preventivo es crucial para el correcto funcionamiento de las bombas de vacío. Un programa bien estructurado puede extender la vida útil del equipo hasta en un 50% y prevenir paros no programados que cuestan miles de dólares...",
     },
     {
-      title: "Tecnología de Vacío: Innovaciones en la Industria 2024",
+      title: "Caso de Exito: ",
       excerpt: "Las últimas tendencias y tecnologías en sistemas de vacío que están revolucionando la industria manufacturera mexicana.",
       date: "1 de Marzo, 2024",
       category: "Tecnología",
@@ -28,12 +27,12 @@ const Blog = () => {
   ];
 
   return (
-    <section id="blog" className="py-24 bg-gradient-to-b from-card to-background">
+    <section id="blog" className="py-24 bg-gradient from-card to-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h4 className="text-4xl md:text-5xl font-bold mb-6">
             Nuestro <span className="text-gradient">Blog</span>
-          </h2>
+          </h4>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Artículos, casos de éxito y guías técnicas sobre tecnología de vacío
           </p>

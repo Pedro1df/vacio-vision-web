@@ -1,7 +1,50 @@
+import React, { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Becker from "@/assets/bomba de vacio becker.png";
+import Busch from "@/assets/bomba de vacio busch.png";
+import Edwards from "@/assets/bomba de vacio edwards.png";
+import Kinney from "@/assets/bomba de vacio kinney.png";
+import Leybold from "@/assets/bomba de vacio leybold.png";
+import Stokes from "@/assets/bomba de vacio stokes.png";
+import Alcatel from "@/assets/bomba de vacio alcatel.png";
+import Pfeiffer from "@/assets/bomba de vacio pfeiffer.png";
+import Varian from "@/assets/bomba de vacio varian.png";
+
+const images = [
+  Becker,
+  Busch,
+  Edwards,
+  Kinney,
+  Leybold,
+  Stokes,
+  Alcatel,
+  Pfeiffer,
+  Varian,
+];
 
 const Hero = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let scrollLeft = 0;
+    const speed = 0.5;
+
+    const animate = () => {
+      scrollLeft += speed;
+      if (scrollLeft >= container.scrollWidth / 2) {
+        scrollLeft = 0;
+      }
+      container.scrollLeft = scrollLeft;
+      requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  }, []);
+
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center parallax-section">
       {/* Video Background */}
@@ -11,33 +54,48 @@ const Hero = () => {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-90"
         >
-          <source src="https://www.pexels.com/es-es/download/video/18557113/" type="video/mp4" />
+          <source src="https://www.pexels.com/es-es/download/video/30914505/" type="video/mp4" />
         </video>
-        <div className="video-overlay" />
+        <div className="absolute inset-0 bg-black/80 z-10" />
       </div>
 
-
       {/* Content */}
-      <div className="container mx-auto px-4 z-10 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+      <div className="container mx-auto px-6 z-20 text-center">
+        <div className="max-w-6xl mx-auto space-y-1 animate-fade-in">
+          <h1 className="text-4xl md:text-7xl font-bold leading-tight text-white">
             <span className="text-gradient">+30 años de experiencia</span>
             <br />
-            <span className="text-foreground">en la tecnologia del vacio en Mexico</span>
+            <span className="text-white">en la tecnología del vacío en México</span>
           </h1>
-         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-          Especialistas en fabricación, mantenimiento y reconstrucción de bombas de vacío | Filtradoras y desgasificadoras | Liofilizadoras | Metalizadoras | Servicios de aplicación de vacío y secado en tanques y transformadores| y más.
-</p>
-<p>
-  Marcas en las que nos especializamos: Busch, Alcatel, Stokes, Kinney, BOC Edwards, Becker, Varian Precision Scientific, Welch y más.
-</p>
+          <p className="text-xl md:text-xl text-white max-w-2xl mx-auto">
+            Especialistas en fabricación, mantenimiento y reconstrucción de bombas de vacío | sistemas de alto vacío | Filtradoras y desgasificadoras | Renta de equipos de vacío | Asesoría técnica personalizada
+          </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          {/* Carrusel de Marcas */}
+          <div className="overflow-hidden relative mt-6">
+            <div
+              ref={scrollRef}
+              className="flex overflow-x-scroll no-scrollbar whitespace-nowrap"
+              style={{ scrollBehavior: 'auto' }}
+            >
+              {[...images, ...images].map((image, index) => (
+                <img
+                  key={`loop-${index}`}
+                  src={image}
+                  alt={`Bomba de Vacío ${index}`}
+                  className="h-36 w-36 mx-6 inline-block"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Botones */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary-glow text-primary-foreground glow-effect group"
+              className="bg-primary hover:bg-primary-foreground text-primary-foreground glow-effect group"
               onClick={() => document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Solicitar Cotización

@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -18,15 +18,18 @@ const Navbar = () => {
   const navLinks = [
     { href: "#inicio", label: "Inicio" },
     { href: "#nosotros", label: "Nosotros" },
-    { href: "#sistemas", label: "Sistemas de Alto Vacío" },
     { href: "#bombas", label: "Bombas de Vacío" },
-    { href: "#filtradoras", label: "Filtradoras y Desgasificadoras" },
-    { href: "#renta", label: "Renta de Equipos" },
+    { href: "#filtradoras", label: "Filtradoras y desgasificadoras" },
+    { href: "#secado", label: "Secado al vacío" },
+    { href: "#detectores", label: "Detectores de fuga y más" },
     { href: "#blog", label: "Blog" },
     { href: "#contacto", label: "Contacto" },
   ];
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
@@ -37,27 +40,33 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-black/80 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-22">
-          <a href="#inicio" className="flex items-center space-x-1" onClick={(e) => scrollToSection(e, "#inicio")}>
-            <img src={logo} alt="Vacío y Hermeticidad Logo" className="h-11 w-16" /> {/* Increased logo width */}
-            <div className="text-2xl font-bold text-white">
-              Vacío y Hermeticidad
-            </div>
+        <div className="flex items-center justify-between h-15">
+          {/* Logo */}
+          <a
+            href="#inicio"
+            className="flex items-center space-x-2"
+            onClick={(e) => scrollToSection(e, "#inicio")}
+          >
+            <img
+              src={logo}
+              alt="Vacío y Hermeticidad Logo"
+              className="h-30 w-40"
+            />
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-3">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-primary transition-colors rounded-lg hover:bg-muted"
+                className="px-1 py-2 text-xl font-semibold text-white hover:text-primary hover:bg-white/10 rounded transition-colors"
               >
                 {link.label}
               </a>
@@ -71,19 +80,23 @@ const Navbar = () => {
             className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? (
+              <X className="h-8 w-8 text-white" />
+            ) : (
+              <Menu className="h-8 w-8 text-white" />
+            )}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 space-y-2 border-t border-border">
+          <div className="lg:hidden py-2 space-y-1 border-t border-border">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
-                className="block px-4 py-3 text-sm font-medium text-foreground/80 hover:text-primary hover:bg-muted rounded-lg transition-colors"
+                className="block px-4 py-3 text-lg font-semibold text-white hover:text-primary hover:bg-white/10 rounded transition-colors"
               >
                 {link.label}
               </a>

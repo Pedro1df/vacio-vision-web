@@ -42,10 +42,10 @@ const Contact = () => {
     <section id="contacto" className="py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h3 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-gradient">Contáctanos</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          </h3>
+          <p className="text-xl text-black max-w-2xl mx-auto">
             Estamos listos para atender tus necesidades de vacío industrial
           </p>
         </div>
@@ -59,45 +59,34 @@ const Contact = () => {
                 <div className="flex items-start gap-4">
                   <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold mb-1">Dirección</h4>
+                    <h2 className="font-gradient mb-1">Dirección</h2>
                     <p className="text-muted-foreground">
-                      Ciudad de México, México
+                      Estado de Mexico (Servicio a toda la republica mexicana)
                       <br />
-                      (Dirección exacta disponible próximamente)
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h4 className="font-semibold mb-1">Teléfono</h4>
+                    <h2 className="font-semibold mb-1">Teléfono</h2>
                     <p className="text-muted-foreground">+52 (55) 57102944</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h4 className="font-semibold mb-1">Email</h4>
-                    <p className="text-muted-foreground">vacioyhermeticidad@gmail.com</p>
-                     <p className="text-muted-foreground">ventas@vacioyhermeticidad.com</p>
-                  </div>
-                </div>
+            
               </div>
             </div>
-
             {/* Map Placeholder */}
-            <div className="rounded-xl overflow-hidden border border-border h-64">
-              <div className="w-full h-full bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-primary mx-auto mb-2" />
-                  <p className="text-muted-foreground">
-                    Mapa de ubicación
-                    <br />
-                    (Actualizar con Google Maps)
-                  </p>
-                </div>
-              </div>
-            </div>
+<div className="rounded-xl overflow-hidden border border-border h-60 md:h-100">
+  <iframe
+    src="https://www.bing.com/maps/embed?h=400&w=500&cp=19.558160~-98.885101&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+    width="100%"
+    height="100%"
+    allowFullScreen
+    className="w-full h-full"
+  ></iframe>
+</div>
+
           </div>
 
           {/* Contact Form */}
@@ -170,7 +159,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-primary hover:bg-primary-glow text-primary-foreground glow-effect"
+                className="w-full bg-primary hover:bg-primary-glow text-black glow-effect"
               >
                 Enviar Mensaje
                 <Send className="ml-2 h-5 w-5" />
